@@ -1,0 +1,8 @@
+script1:
+  alias: 'Clean kitchen'
+  description: 'Script to automate cleaning of kitchen'
+  sequence:
+    - service: notify.notify
+      data:
+        title: 'Test notification'
+        message: 'This is test notification'

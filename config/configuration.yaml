@@ -1,0 +1,9 @@
+homeassistant:
+  name: Home
+  unit_system: metric
+
+default_config:
+
+cloud: false
+script: !include scripts.yaml
+google_assistant: !include google-assistant.yaml
