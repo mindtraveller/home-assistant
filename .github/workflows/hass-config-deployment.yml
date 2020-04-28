@@ -20,3 +20,4 @@ jobs:
           password: ${{ secrets.HASS_SERVER_PASSWORD }}
           source: "config/*"
           target: "C:/Users/user/AppData/Roaming/.homeassistant"
+          overwrite: true
