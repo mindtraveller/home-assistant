@@ -9,6 +9,18 @@ cleanup_kitchen:
         zone:
           - [25300, 24100, 29000, 26700]
 
+cleanup_hall:
+  alias: cleanup hall
+  description: Script to automate cleanup of the hall
+  sequence:
+    - service: xiaomi_miio.vacuum_clean_zone
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        repeats: 1
+        zone:
+          - [23700, 25950, 25300, 26700]
+          - [23300, 26700, 25100, 28500]
+
 goto_target:
   alias: goto target
   description: Example of goto target command for vacuum

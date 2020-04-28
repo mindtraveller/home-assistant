@@ -1,0 +1,7 @@
+tunnels:
+  hass:
+    proto: http
+    addr: 8123
+  ssh:
+    proto: tcp
+    addr: 22
