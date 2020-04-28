@@ -1,8 +1,20 @@
-script1:
-  alias: 'Clean kitchen'
-  description: 'Script to automate cleaning of kitchen'
+cleanup_kitchen:
+  alias: cleanup kitchen
+  description: Script to automate cleanup of the kitchen
   sequence:
-    - service: notify.notify
+    - service: xiaomi_miio.vacuum_clean_zone
       data:
-        title: 'Test notification'
-        message: 'This is test notification'
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        repeats: 1
+        zone:
+          - [25300, 24100, 29000, 26700]
+
+goto_target:
+  alias: goto target
+  description: Example of goto target command for vacuum
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_goto_target
+        params: [26500, 25500]
