@@ -1,11 +1,13 @@
 homeassistant:
   name: Home
   unit_system: metric
+  time_zone: Europe/Minsk
 
 default_config:
 
 cloud: false
 script: !include scripts.yaml
+automation: !include automations.yaml
 google_assistant: !include google-assistant.yaml
 
 vacuum:
