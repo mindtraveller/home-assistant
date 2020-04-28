@@ -20,3 +20,14 @@ jobs:
           password: ${{ secrets.HASS_SERVER_PASSWORD }}
           local: config
           remote: hass/config
+
+      - name: Deploy helper scripts to server
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          host: ${{ secrets.HASS_SERVER_SSH_HOST }}
+          port: ${{ secrets.HASS_SERVER_SSH_PORT }}
+          username: ${{ secrets.HASS_SERVER_USER }}
+          password: ${{ secrets.HASS_SERVER_PASSWORD }}
+          local: .
+          remote: hass
+          recursive: false
