@@ -18,6 +18,4 @@ jobs:
           port: ${{ secrets.HASS_SERVER_SSH_PORT }}
           username: ${{ secrets.HASS_SERVER_USER }}
           password: ${{ secrets.HASS_SERVER_PASSWORD }}
-          source: "config/configuration.yaml,config/google-assistant.yaml,config/scripts.yaml"
-          target: "hass-config"
-          rm: true
+          source: "."

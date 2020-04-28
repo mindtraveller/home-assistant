@@ -1,1 +1,1 @@
-ngrok start -config C:/Users/user/.ngrok2/ngrok.yml -config ./ngrok.yml hass ssh
+ngrok start -config %USERPROFILE%/.ngrok2/ngrok.yml -config ./ngrok.yml hass ssh
