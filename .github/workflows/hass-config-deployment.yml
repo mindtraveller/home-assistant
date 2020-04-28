@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.HASS_SERVER_USER }}
           password: ${{ secrets.HASS_SERVER_PASSWORD }}
           source: "config/configuration.yaml,config/google-assistant.yaml,config/scripts.yaml"
-          target: "C:/Users/user/AppData/Roaming/.homeassistant"
+          target: "hass-config"
           overwrite: true
