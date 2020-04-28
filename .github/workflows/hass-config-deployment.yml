@@ -12,11 +12,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy config to server
-        uses: appleboy/scp-action@v0.0.8
+        uses: garygrossgarten/github-action-scp@release
         with:
           host: ${{ secrets.HASS_SERVER_SSH_HOST }}
           port: ${{ secrets.HASS_SERVER_SSH_PORT }}
           username: ${{ secrets.HASS_SERVER_USER }}
           password: ${{ secrets.HASS_SERVER_PASSWORD }}
-          source: "./config/configuration.yaml"
-          target: "hass/config/configuration.yaml"
+          local: config
+          remote: hass/config
