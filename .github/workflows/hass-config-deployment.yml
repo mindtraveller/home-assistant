@@ -20,4 +20,4 @@ jobs:
           password: ${{ secrets.HASS_SERVER_PASSWORD }}
           source: "config/configuration.yaml,config/google-assistant.yaml,config/scripts.yaml"
           target: "hass-config"
-          overwrite: true
+          rm: true
