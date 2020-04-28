@@ -14,8 +14,9 @@ jobs:
       - name: Deploy config to server
         uses: appleboy/scp-action@v0.0.8
         with:
-          host: ${{ secrets.HASS_SERVER_HOST }}
-          username: ${{ secrets.HASS_SERVER_USERNAME }}
+          host: ${{ secrets.HASS_SERVER_SSH_HOST }}
+          port: ${{ secrets.HASS_SERVER_SSH_PORT }}
+          username: ${{ secrets.HASS_SERVER_USER }}
           password: ${{ secrets.HASS_SERVER_PASSWORD }}
           source: "config/*"
           target: "C:/Users/user/AppData/Roaming/.homeassistant"
