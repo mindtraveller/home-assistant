@@ -2,3 +2,5 @@
 config/*
 !config/*.yaml
 !config/*.yml
+**/secrets.yaml
+deploy-secrets.sh

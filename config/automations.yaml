@@ -15,7 +15,7 @@
     - service: vacuum.start
       entity_id: vacuum.xiaomi_vacuum_cleaner
 
-    - service: persistent_notification.create
+    - service: notify.telegram_admin
       data:
-        message: Cleanup of whole apartment has started
-        title: Cleanup started
+        title: '*Cleanup started!*'
+        message: Cleanup of the whole apartment has started.
