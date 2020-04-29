@@ -20,8 +20,3 @@ telegram_bot:
     api_key: !secret telegram_bot
     allowed_chat_ids:
       - !secret telegram_chat_id_admin
-
-notify:
-  - name: telegram_admin
-    platform: telegram
-    chat_id: !secret telegram_chat_id_admin
