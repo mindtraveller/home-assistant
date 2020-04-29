@@ -12,9 +12,8 @@
       - condition: template
         value_template: '{{ now().weekday() == 4 }}'
   action:
-    - service: vaccum.start
-      data:
-        entity_id: vacuum.xiaomi_vacuum_cleaner
+    - service: vacuum.start
+      entity_id: vacuum.xiaomi_vacuum_cleaner
 
     - service: persistent_notification.create
       data:
