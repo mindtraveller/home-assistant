@@ -7,7 +7,7 @@ cleanup_kitchen:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         repeats: 1
         zone:
-          - [25300, 24100, 29000, 26700]
+          - [25000, 24400, 28700, 27200]
 
 cleanup_hall:
   alias: cleanup hall
@@ -18,8 +18,8 @@ cleanup_hall:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         repeats: 1
         zone:
-          - [23700, 25950, 25300, 26700]
-          - [23300, 26700, 25100, 28500]
+          - [23200, 26500, 25000, 27200]
+          - [23000, 27200, 24850, 29500]
 
 cleanup_living_room:
   alias: cleanup living room
@@ -30,7 +30,7 @@ cleanup_living_room:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         repeats: 1
         zone:
-          - [25100, 27000, 30800, 30300]
+          - [25000, 27300, 30500, 30700]
 
 goto_target:
   alias: goto target
