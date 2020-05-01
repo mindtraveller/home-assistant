@@ -28,6 +28,7 @@
   action:
     - service: telegram_bot.send_message
       data:
+        message: 'Here is all available commands:'
         inline_keyboard:
           - 'Vacuum:/vacuum'
 
@@ -40,6 +41,7 @@
   action:
     - service: telegram_bot.send_message
       data:
+        message: 'Here is Vacuum commands:'
         inline_keyboard:
           - 'Clean hall:/clean_hall'
 
@@ -63,7 +65,7 @@
     from: 'off'
     to: 'on'
   action:
-    service: telegram_bot.send_message
-    data:
-      title: '<b>Update available!</b>'
-      message: New version of Home Assistant <b>{{ state_attr('binary_sensor.updater', 'newest_version') }}</b> is now available.
+    - service: telegram_bot.send_message
+      data:
+        title: '<b>Update available!</b>'
+        message: New version of Home Assistant <b>{{ state_attr('binary_sensor.updater', 'newest_version') }}</b> is now available.
