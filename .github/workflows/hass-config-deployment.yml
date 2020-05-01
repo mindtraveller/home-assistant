@@ -17,7 +17,7 @@ jobs:
           host: ${{ secrets.HASS_SERVER_SSH_HOST }}
           port: ${{ secrets.HASS_SERVER_SSH_PORT }}
           username: ${{ secrets.HASS_SERVER_USER }}
-          password: ${{ secrets.HASS_SERVER_PASSWORD }}
+          privateKey: ${{ secrets.HASS_SERVER_KEY }}
           local: config
           remote: hass/config
 
@@ -27,7 +27,7 @@ jobs:
           host: ${{ secrets.HASS_SERVER_SSH_HOST }}
           port: ${{ secrets.HASS_SERVER_SSH_PORT }}
           username: ${{ secrets.HASS_SERVER_USER }}
-          password: ${{ secrets.HASS_SERVER_PASSWORD }}
+          privateKey: ${{ secrets.HASS_SERVER_KEY }}
           local: .
           remote: hass
           recursive: false
