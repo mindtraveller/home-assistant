@@ -3,6 +3,9 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Minsk
 
+http:
+  base_url: !secret base_url
+
 default_config:
 
 cloud: false
@@ -16,7 +19,8 @@ vacuum:
     token: !secret vacuum_token
 
 telegram_bot:
-  - platform: polling
+  - platform: webhooks
     api_key: !secret telegram_bot
+    parse_mode: html
     allowed_chat_ids:
       - !secret telegram_chat_id_admin
