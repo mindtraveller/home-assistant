@@ -14,14 +14,12 @@
   action:
     - service: vacuum.start
       entity_id: vacuum.xiaomi_vacuum_cleaner
-
     - service: telegram_bot.send_message
       data:
         title: '🤖 <b>Cleanup started!</b>'
         message: Cleanup of the whole apartment has started.
-        parse_mode: html
 
-- alias: start telegram conversation
+- alias: list telegram commands
   trigger:
     platform: event
     event_type: telegram_command
@@ -30,10 +28,33 @@
   action:
     - service: telegram_bot.send_message
       data:
-        message: 'commands'
-        inline-keyboard:
-          - '/ping, /alarm'
-          - '/siren'
+        inline_keyboard:
+          - 'Vacuum:/vacuum'
+
+- alias: list vacuum telegram commands
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/vacuum'
+  action:
+    - service: telegram_bot.send_message
+      data:
+        inline_keyboard:
+          - 'Clean hall:/clean_hall'
+
+- alias: cleanup hall
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/clean_hall'
+  action:
+    - service: script.cleanup_hall
+    - service: telegram_bot.send_message
+      data:
+        title: '🤖 <b>Cleanup started!</b>'
+        message: Cleanup of the hall has started.
 
 - alias: notify when new update is available
   trigger:
@@ -46,4 +67,3 @@
     data:
       title: '<b>Update available!</b>'
       message: New version of Home Assistant <b>{{ state_attr('binary_sensor.updater', 'newest_version') }}</b> is now available.
-      parse_mode: html
