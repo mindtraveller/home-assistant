@@ -28,30 +28,38 @@
   action:
     - service: telegram_bot.send_message
       data:
-        message: 'Here is all available commands:'
+        message: 'Here are all available commands:'
         inline_keyboard:
           - 'Vacuum:/vacuum'
 
 - alias: list vacuum telegram commands
   trigger:
     platform: event
-    event_type: telegram_command
+    event_type: telegram_callback
     event_data:
-      command: '/vacuum'
+      data: '/vacuum'
   action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: '{{ trigger.event.data.id }}'
+        message: Working on it...
     - service: telegram_bot.send_message
       data:
-        message: 'Here is Vacuum commands:'
+        message: 'Here are Vacuum commands:'
         inline_keyboard:
           - 'Clean hall:/clean_hall'
 
 - alias: cleanup hall
   trigger:
     platform: event
-    event_type: telegram_command
+    event_type: telegram_callback
     event_data:
-      command: '/clean_hall'
+      data: '/clean_hall'
   action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: '{{ trigger.event.data.id }}'
+        message: Working on it...
     - service: script.cleanup_hall
     - service: telegram_bot.send_message
       data:
