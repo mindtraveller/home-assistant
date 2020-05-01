@@ -18,8 +18,8 @@ cleanup_hall:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         repeats: 1
         zone:
-          - [23200, 26500, 25000, 27200]
-          - [23000, 27200, 24850, 29500]
+          - [26000, 24400, 27800, 25300]
+          - [26300, 22500, 28100, 24400]
 
 cleanup_living_room:
   alias: cleanup living room
