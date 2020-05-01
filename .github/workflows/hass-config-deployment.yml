@@ -31,3 +31,14 @@ jobs:
           local: .
           remote: hass
           recursive: false
+
+      - name: Notify admin about deployment
+        uses: appleboy/telegram-action@0.0.7
+        with:
+          to: ${{secrets.TELEGRAM_ADMIN_CHAT_ID}}
+          token: ${{secrets.TELEGRAM_BOT_TOKEN}}
+          message: |
+            🚀 <b>Changes deployed!</b>
+            The latest changes have been deployed to the server.
+            Restart is required in order to apply them.
+          format: html
