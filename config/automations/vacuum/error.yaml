@@ -6,4 +6,4 @@ trigger:
 action:
   - service: telegram_bot.send_message
     data:
-      message: 🤖 Error!
+      message: 🤖 Error! {{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'error') }}
