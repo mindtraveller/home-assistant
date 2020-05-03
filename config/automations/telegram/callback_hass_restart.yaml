@@ -9,7 +9,7 @@ action:
     data_template:
       callback_query_id: '{{ trigger.event.data.id }}'
       message: Working on it...
-  - service: homeassistant.restart
   - service: telegram_bot.send_message
     data:
       message: Okay, restarting Home Assistant server...
+  - service: homeassistant.restart
