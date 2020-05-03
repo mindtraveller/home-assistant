@@ -6,4 +6,4 @@ action:
   - service: telegram_bot.send_message
     data:
       title: '✅ <b>Server started!</b>'
-      message: Home Assistant server has started successfully.
+      message: Home Assistant server has started successfully

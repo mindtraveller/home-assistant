@@ -40,5 +40,5 @@ jobs:
           message: |
             🚀 <b>Changes deployed!</b>
             The latest changes have been deployed to the server.
-            Restart is required in order to apply them.
+            Restart is required in order to apply them
           format: html
