@@ -3,7 +3,7 @@ trigger:
   platform: event
   event_type: telegram_command
   event_data:
-    command: '/start'
+    command: '/list'
 action:
   - service: telegram_bot.send_message
     data:

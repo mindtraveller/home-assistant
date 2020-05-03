@@ -3,6 +3,6 @@
 - !include automations/homeassistant.start.yaml
 - !include automations/homeassistant.shutdown.yaml
 
-- !include automations/telegram/command_start.yaml
+- !include automations/telegram/command_list.yaml
 - !include automations/telegram/callback_vaccum.yaml
 - !include automations/telegram/callback_clean_hall.yaml
