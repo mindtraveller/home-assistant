@@ -1,0 +1,17 @@
+alias: list vacuum telegram commands
+trigger:
+  platform: event
+  event_type: telegram_callback
+  event_data:
+    data: '/vacuum'
+action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: '{{ trigger.event.data.id }}'
+      message: Working on it...
+  - service: telegram_bot.send_message
+    data:
+      message: 'Here are Vacuum commands:'
+      inline_keyboard:
+        - 'Clean hall:/vacuum_clean_hall'
+        - 'Cancel cleanup:/vacuum_cancel_cleanup, Stop:/vacuum_stop, Dock:/vacuum_dock'
