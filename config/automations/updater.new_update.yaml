@@ -1,0 +1,11 @@
+alias: notify when new update is available
+trigger:
+  platform: state
+  entity_id: updater.updater
+  from: 'off'
+  to: 'on'
+action:
+  - service: telegram_bot.send_message
+    data:
+      title: '<b>Update available!</b>'
+      message: New version of Home Assistant <b>{{ state_attr('binary_sensor.updater', 'newest_version') }}</b> is now available.

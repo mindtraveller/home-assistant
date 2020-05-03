@@ -1,6 +1,7 @@
 .idea
 config/*
-!config/*.yaml
-!config/*.yml
-**/secrets.yaml
+!config/automations
+!config/**/*.yaml
+!config/**/*.yml
+config/**/secrets.yaml
 deploy-secrets.sh

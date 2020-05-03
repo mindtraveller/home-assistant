@@ -1,0 +1,20 @@
+alias: cleanup whole apartment on mon, wed, fri at 12:00
+trigger:
+  platform: time
+  at: '12:00:00'
+condition:
+  condition: or
+  conditions:
+    - condition: template
+      value_template: '{{ now().weekday() == 0 }}'
+    - condition: template
+      value_template: '{{ now().weekday() == 2 }}'
+    - condition: template
+      value_template: '{{ now().weekday() == 4 }}'
+action:
+  - service: vacuum.start
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+  - service: telegram_bot.send_message
+    data:
+      title: '🤖 <b>Cleanup started!</b>'
+      message: Cleanup of the whole apartment has started.
