@@ -1,0 +1,9 @@
+alias: notify when cleaning started
+trigger:
+  platform: state
+  entity_id: vacuum.xiaomi_vacuum_cleaner
+  to: 'error'
+action:
+  - service: telegram_bot.send_message
+    data:
+      message: 🤖 Error!

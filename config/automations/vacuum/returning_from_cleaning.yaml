@@ -1,0 +1,10 @@
+alias: notify when returning to the dock after cleaning
+trigger:
+  platform: state
+  entity_id: vacuum.xiaomi_vacuum_cleaner
+  from: 'cleaning'
+  to: 'returning'
+action:
+  - service: telegram_bot.send_message
+    data:
+      message: 🤖 Cleanup finished. Going back to the dock

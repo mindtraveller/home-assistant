@@ -3,14 +3,11 @@ trigger:
   platform: time
   at: '12:00:00'
 condition:
-  condition: or
-  conditions:
-    - condition: template
-      value_template: '{{ now().weekday() == 0 }}'
-    - condition: template
-      value_template: '{{ now().weekday() == 2 }}'
-    - condition: template
-      value_template: '{{ now().weekday() == 4 }}'
+  condition: time
+  weekday:
+    - mon
+    - wed
+    - fri
 action:
   - service: vacuum.start
     entity_id: vacuum.xiaomi_vacuum_cleaner

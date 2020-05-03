@@ -9,8 +9,7 @@ action:
     data_template:
       callback_query_id: '{{ trigger.event.data.id }}'
       message: Working on it...
-  - service: script.cleanup_kitchen
   - service: telegram_bot.send_message
     data:
-      title: '🤖 <b>Cleanup started!</b>'
-      message: Cleanup of the kitchen has started
+      message: Starting kitchen cleanup...
+  - service: script.cleanup_kitchen

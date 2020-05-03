@@ -8,10 +8,7 @@ action:
   - service: telegram_bot.answer_callback_query
     data_template:
       callback_query_id: '{{ trigger.event.data.id }}'
-      message: Working on it...
+      message: returning...
   - service: vacuum.return_to_base
     data:
       entity_id: vacuum.xiaomi_vacuum_cleaner
-  - service: telegram_bot.send_message
-    data:
-      message: Going back to the dock
