@@ -1,0 +1,9 @@
+alias: notify when hass started
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  - service: telegram_bot.send_message
+    data:
+      title: '✅ <b>Server started!</b>'
+      message: Home Assistant server has started successfully.

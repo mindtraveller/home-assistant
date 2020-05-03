@@ -1,0 +1,9 @@
+alias: notify when hass is being shutdown
+trigger:
+  platform: homeassistant
+  event: shutdown
+action:
+  - service: telegram_bot.send_message
+    data:
+      title: '❗ <b>Stopping server!</b>'
+      message: Home Assistant server is being shutdown.
