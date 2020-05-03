@@ -3,7 +3,7 @@ trigger:
   platform: event
   event_type: telegram_callback
   event_data:
-    data: 'hass'
+    data: '/hass'
 action:
   - service: telegram_bot.answer_callback_query
     data_template:
@@ -13,4 +13,4 @@ action:
     data:
       message: 'Here are Home Assistant commands:'
       inline_keyboard:
-        - 'Restart:hass_restart'
+        - 'Restart:/hass_restart'
