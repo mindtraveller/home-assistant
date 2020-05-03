@@ -6,3 +6,5 @@
 - !include automations/telegram/command_list.yaml
 - !include automations/telegram/callback_vaccum.yaml
 - !include automations/telegram/callback_clean_hall.yaml
+- !include automations/telegram/callback_hass.yaml
+- !include automations/telegram/callback_hass_restart.yaml

@@ -10,3 +10,4 @@ action:
       message: 'Here are all available commands:'
       inline_keyboard:
         - 'Vacuum:/vacuum'
+        - 'HASS:hass'

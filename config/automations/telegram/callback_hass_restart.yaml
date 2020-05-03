@@ -1,0 +1,15 @@
+alias: restart hass
+trigger:
+  platform: event
+  event_type: telegram_callback
+  event_data:
+    data: 'hass_restart'
+action:
+  - service: homeassistant.answer_callback_query
+    data_template:
+      callback_query_id: '{{ trigger.event.data.id }}'
+      message: Working on it...
+  - service: homeassistant.restart
+  - service: telegram_bot.send_message
+    data:
+      message: Okay, restarting Home Assistant server...
