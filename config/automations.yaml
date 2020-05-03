@@ -1,16 +1,17 @@
 - !include automations/cleanup_whole_apartment.yaml
 - !include automations/updater.new_update.yaml
-- !include automations/homeassistant.start.yaml
-- !include automations/homeassistant.shutdown.yaml
+- !include automations/telegram_command_list.yaml
 
-- !include automations/telegram/command_list.yaml
-- !include automations/telegram/hass/callback_hass.yaml
-- !include automations/telegram/hass/callback_hass_restart.yaml
-- !include automations/telegram/vacuum/callback_vaccum.yaml
-- !include automations/telegram/vacuum/callback_vacuum_cancel_cleanup.yaml
-- !include automations/telegram/vacuum/callback_vacuum_clean_hall.yaml
-- !include automations/telegram/vacuum/callback_vacuum_clean_kitchen.yaml
-- !include automations/telegram/vacuum/callback_vacuum_clean_living_room.yaml
-- !include automations/telegram/vacuum/callback_vacuum_dock.yaml
-- !include automations/telegram/vacuum/callback_vacuum_start.yaml
-- !include automations/telegram/vacuum/callback_vacuum_stop.yaml
+- !include automations/hass/start.yaml
+- !include automations/hass/shutdown.yaml
+- !include automations/hass/telegram/callback_hass.yaml
+- !include automations/hass/telegram/callback_hass_restart.yaml
+
+- !include automations/vacuum/telegram/callback_vaccum.yaml
+- !include automations/vacuum/telegram/callback_vacuum_cancel_cleanup.yaml
+- !include automations/vacuum/telegram/callback_vacuum_clean_hall.yaml
+- !include automations/vacuum/telegram/callback_vacuum_clean_kitchen.yaml
+- !include automations/vacuum/telegram/callback_vacuum_clean_living_room.yaml
+- !include automations/vacuum/telegram/callback_vacuum_dock.yaml
+- !include automations/vacuum/telegram/callback_vacuum_start.yaml
+- !include automations/vacuum/telegram/callback_vacuum_stop.yaml
