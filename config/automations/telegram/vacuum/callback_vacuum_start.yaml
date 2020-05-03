@@ -1,0 +1,17 @@
+alias: stop current cleanup
+trigger:
+  platform: event
+  event_type: telegram_callback
+  event_data:
+    data: '/vacuum_start'
+action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: '{{ trigger.event.data.id }}'
+      message: Working on it...
+  - service: vacuum.start
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+  - service: telegram_bot.send_message
+    data:
+      message: Cleanup has been started
