@@ -5,7 +5,7 @@ trigger:
   event_data:
     data: '/hass_restart'
 action:
-  - service: homeassistant.answer_callback_query
+  - service: telegram_bot.answer_callback_query
     data_template:
       callback_query_id: '{{ trigger.event.data.id }}'
       message: Working on it...
