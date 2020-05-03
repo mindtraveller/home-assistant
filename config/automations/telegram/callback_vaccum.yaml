@@ -13,4 +13,4 @@ action:
     data:
       message: 'Here are Vacuum commands:'
       inline_keyboard:
-        - 'Clean hall:/clean_hall'
+        - 'Clean hall:/vacuum_clean_hall'
