@@ -28,7 +28,3 @@ telegram_bot:
       - 127.0.0.1
     allowed_chat_ids:
       - !secret telegram_chat_id_admin
-
-server:
-  - platform: openhardwaremonitor
-    host: localhost
