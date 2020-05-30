@@ -1,6 +1,7 @@
 name: Hass server availability
 
 on:
+  push:
   schedule:
     - cron:  '0 * * * *'
 
@@ -18,7 +19,7 @@ jobs:
 
           if [[ $status != 200 ]]; then
             exit 1
-          enif
+          fi
 
       - name: Notify admin that server is down
         if: ${{ failure() }}
