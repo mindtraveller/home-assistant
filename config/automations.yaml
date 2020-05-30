@@ -6,6 +6,7 @@
 - !include automations/hass/start.yaml
 - !include automations/hass/shutdown.yaml
 - !include automations/hass/telegram/callback_hass.yaml
+- !include automations/hass/telegram/callback_hass_back.yaml
 - !include automations/hass/telegram/callback_hass_restart.yaml
 
 - !include automations/vacuum/cleaning.yaml
