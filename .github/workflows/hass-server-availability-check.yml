@@ -1,0 +1,26 @@
+on:
+  schedule:
+    - cron:  '00 * * * *'
+
+jobs:
+  job1:
+    name: Verify hass service availability
+    runs-on: ubuntu-latest
+    steps:
+      - id: ping_step
+        name: Ping server
+        run: |
+          echo ::set-output name=status::`curl -o /dev/null -s -w "%{http_code}\n" \
+                                                          -H "Authorization: Bearer ${{secrets.HASS_TOKEN}}" \
+                                                          ${{secrets.HASS_ADDRESS}}/api/config`
+
+      - name: Notify admin if server is down
+        if: ${{ steps.ping_step.outputs.status != 200 }}
+        uses: appleboy/telegram-action@0.0.7
+        with:
+          to: ${{secrets.TELEGRAM_ADMIN_CHAT_ID}}
+          token: ${{secrets.TELEGRAM_BOT_TOKEN}}
+          message: |
+            ❗️ <b>Server is down!</b>
+            Home assistant server is not available.
+          format: html
