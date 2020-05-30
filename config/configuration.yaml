@@ -4,6 +4,7 @@ homeassistant:
   time_zone: Europe/Minsk
   latitude: !secret latitude
   longitude: !secret longitude
+  elevation: 30
   external_url: !secret base_url
 
 default_config:
