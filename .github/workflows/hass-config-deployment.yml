@@ -1,3 +1,5 @@
+name: Config deployment
+
 on:
   push:
     branches:
