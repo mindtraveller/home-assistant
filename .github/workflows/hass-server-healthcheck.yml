@@ -6,7 +6,7 @@ on:
 
 jobs:
   job1:
-    name: Verify hass service is available
+    name: Verify hass server is available
     runs-on: ubuntu-latest
     steps:
       - id: ping_step
@@ -20,7 +20,7 @@ jobs:
             exit 1
           enif
 
-      - name: Notify admin if server is down
+      - name: Notify admin that server is down
         if: ${{ failure() }}
         uses: appleboy/telegram-action@0.0.7
         with:
