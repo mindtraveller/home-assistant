@@ -16,6 +16,7 @@
 - !include automations/vacuum/returning_from_cleaning.yaml
 - !include automations/vacuum/returning_from_idle.yaml
 - !include automations/vacuum/telegram/callback_vaccum.yaml
+- !include automations/vacuum/telegram/callback_vaccum_back.yaml
 - !include automations/vacuum/telegram/callback_vacuum_cancel_cleanup.yaml
 - !include automations/vacuum/telegram/callback_vacuum_clean_hall.yaml
 - !include automations/vacuum/telegram/callback_vacuum_clean_kitchen.yaml
