@@ -1,6 +1,7 @@
 - !include automations/cleanup_whole_apartment.yaml
 - !include automations/updater.new_update.yaml
-- !include automations/telegram_command_list.yaml
+
+- !include automations/telegram/command_list.yaml
 
 - !include automations/hass/start.yaml
 - !include automations/hass/shutdown.yaml

@@ -1,9 +1,9 @@
-alias: list vacuum telegram commands
+alias: back from vacuum commands to root commands
 trigger:
   platform: event
   event_type: telegram_callback
   event_data:
-    data: '/vacuum'
+    data: '/vacuum_back'
 action:
   - service: telegram_bot.answer_callback_query
     data_template:
@@ -13,9 +13,5 @@ action:
     data_template:
       message_id: '{{ trigger.event.data.message.message_id }}'
       chat_id: '{{ trigger.event.data.chat_id }}'
-      message: 'Here are Vacuum commands:'
-      inline_keyboard:
-        - 'Start:/vacuum_start'
-        - 'Clean kitchen:/vacuum_clean_kitchen, Clean hall:/vacuum_clean_hall, Clean living room:/vacuum_clean_living_room'
-        - 'Cancel cleanup:/vacuum_cancel_cleanup, Stop:/vacuum_stop, Dock:/vacuum_dock'
-        - 'Back:/vacuum_back'
+      message: !include ../../telegram/command_list_message.yaml
+      inline_keyboard: !include ../../telegram/command_list_keyboard.yaml

@@ -7,7 +7,5 @@ trigger:
 action:
   - service: telegram_bot.send_message
     data:
-      message: 'Here are all available commands:'
-      inline_keyboard:
-        - 'Vacuum:/vacuum'
-        - 'HASS:/hass'
+      message: !include command_list_message.yaml
+      inline_keyboard: !include command_list_keyboard.yaml
