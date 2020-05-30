@@ -9,7 +9,7 @@ action:
     data_template:
       callback_query_id: '{{ trigger.event.data.id }}'
       message: Working on it...
-  - service: telegram_bot.send_message
+  - service: telegram_bot.edit_message
     data:
       message: 'Here are Home Assistant commands:'
       inline_keyboard:
