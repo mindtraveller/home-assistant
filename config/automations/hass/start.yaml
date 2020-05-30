@@ -7,6 +7,6 @@ action:
     data:
       title: '✅ <b>Server started!</b>'
       message: |
-        Home Assistant server has started successfully.<br/>
+        Home Assistant server has started successfully.\n
         Checkout what you can do:
       inline_keyboard: !include ../telegram/command_list_keyboard.yaml
