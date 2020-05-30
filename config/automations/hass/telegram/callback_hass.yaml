@@ -11,8 +11,8 @@ action:
       message: Working on it...
   - service: telegram_bot.edit_message
     data:
-      message_id: '{{ trigger.event.data.message.message_id }}'
-      chat_id: '{{ trigger.event.data.chat_id }}'
+      message_id: '{{ trigger.event.data.message.message_id | int }}'
+      chat_id: '{{ trigger.event.data.chat_id | int }}'
       message: 'Here are Home Assistant commands:'
       inline_keyboard:
         - 'Restart:/hass_restart'

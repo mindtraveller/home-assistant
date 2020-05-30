@@ -11,7 +11,7 @@ action:
       message: Working on it...
   - service: telegram_bot.edit_message
     data:
-      message_id: '{{ trigger.event.data.message.message_id }}'
+      message_id: '{{ trigger.event.data.message.message_id | int }}'
       chat_id: "{{ trigger.event.data.chat_id }}"
       message: Starting living room cleanup...
   - service: script.cleanup_living_room
