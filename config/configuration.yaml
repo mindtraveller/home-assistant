@@ -2,9 +2,9 @@ homeassistant:
   name: Home
   unit_system: metric
   time_zone: Europe/Minsk
-
-http:
-  base_url: !secret base_url
+  latitude: !secret latitude
+  longitude: !secret longitude
+  external_url: !secret base_url
 
 default_config:
 
