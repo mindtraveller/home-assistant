@@ -12,14 +12,15 @@ jobs:
     steps:
       - id: ping_step
         name: Ping server
+        shell: bash
         run: |
-          curl -o /dev/null -s -w "%{http_code}\n" \
+          status=`curl -o /dev/null -s -w "%{http_code}\n" \
                         -H "Authorization: Bearer ${{secrets.HASS_TOKEN}}" \
-                        ${{secrets.HASS_ADDRESS}}/api/config
+                        ${{secrets.HASS_ADDRESS}}/api/config`
 
-#          if [[ $status != 200 ]]; then
-#            exit 1
-#          fi
+          if [[ $status != 200 ]]; then
+            exit 1
+          fi
 
       - name: Notify admin that server is down
         if: ${{ failure() }}
