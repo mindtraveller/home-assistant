@@ -2,8 +2,7 @@ name: Hass server availability
 
 on:
   schedule:
-    - cron:  '*/5 * * * *'
-  push:
+    - cron:  '0 * * * *'
 
 jobs:
   job1:
@@ -29,5 +28,5 @@ jobs:
           token: ${{secrets.TELEGRAM_BOT_TOKEN}}
           message: |
             ❗️ <b>Server is down!</b>
-            Home assistant server is not available.
+            Home assistant server is not available
           format: html
