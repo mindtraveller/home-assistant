@@ -1,7 +1,7 @@
 alias: notify when new update is available
 trigger:
   platform: state
-  entity_id: updater.updater
+  entity_id: binary_sensor.updater
   from: 'off'
   to: 'on'
 action:
