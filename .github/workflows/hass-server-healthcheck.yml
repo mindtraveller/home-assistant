@@ -1,7 +1,6 @@
 name: Hass server availability
 
 on:
-  push:
   schedule:
     - cron:  '0 * * * *'
 
