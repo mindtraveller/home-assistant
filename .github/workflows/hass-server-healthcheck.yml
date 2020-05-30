@@ -3,6 +3,7 @@ name: Hass server availability
 on:
   schedule:
     - cron:  '*/5 * * * *'
+  push:
 
 jobs:
   job1:
@@ -12,12 +13,16 @@ jobs:
       - id: ping_step
         name: Ping server
         run: |
-          echo ::set-output name=status::`curl -o /dev/null -s -w "%{http_code}\n" \
-                                                          -H "Authorization: Bearer ${{secrets.HASS_TOKEN}}" \
-                                                          ${{secrets.HASS_ADDRESS}}/api/config`
+          status = curl -o /dev/null -s -w "%{http_code}\n" \
+                        -H "Authorization: Bearer ${{secrets.HASS_TOKEN}}" \
+                        ${{secrets.HASS_ADDRESS}}/api/config
+
+          if [[ $status != 200 ]]; then
+            exit 1
+          enif
 
       - name: Notify admin if server is down
-        if: ${{ steps.ping_step.outputs.status != 200 }}
+        if: ${{ failure() }}
         uses: appleboy/telegram-action@0.0.7
         with:
           to: ${{secrets.TELEGRAM_ADMIN_CHAT_ID}}
