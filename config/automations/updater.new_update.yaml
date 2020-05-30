@@ -11,5 +11,6 @@ action:
     data:
       title: '<b>Update available!</b>'
       message: |
-        New version of Home Assistant <b>{{ state_attr('binary_sensor.updater', 'newest_version') }}</b> is now available.\n
+        New version of Home Assistant <b>{{ state_attr('binary_sensor.updater', 'newest_version') }}</b> is now available.
+
         Checkout <a href="{{state_attr('binary_sensor.updater', 'release_notes')}}">release notes</a>
