@@ -7,8 +7,7 @@ cleanup_hall:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         repeats: 1
         zone:
-          - [26000, 24400, 27800, 25200]
-          - [26400, 22600, 28100, 24400]
+          - [26500, 22700, 28100, 25200]
 
 goto_target:
   alias: goto target
