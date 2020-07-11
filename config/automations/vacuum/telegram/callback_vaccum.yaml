@@ -16,6 +16,6 @@ action:
       message: 'Here are Vacuum commands:'
       inline_keyboard:
         - 'Start:/vacuum_start'
-        - 'Clean kitchen:/vacuum_clean_kitchen, Clean hall:/vacuum_clean_hall, Clean living room:/vacuum_clean_living_room'
+        - 'Clean hall:/vacuum_clean_hall'
         - 'Cancel cleanup:/vacuum_cancel_cleanup, Stop:/vacuum_stop, Dock:/vacuum_dock'
         - 'Back:/vacuum_back'

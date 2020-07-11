@@ -1,14 +1,3 @@
-cleanup_kitchen:
-  alias: cleanup kitchen
-  description: Script to automate cleanup of the kitchen
-  sequence:
-    - service: xiaomi_miio.vacuum_clean_zone
-      data:
-        entity_id: vacuum.xiaomi_vacuum_cleaner
-        repeats: 1
-        zone:
-          - [22400, 24400, 26000, 27200]
-
 cleanup_hall:
   alias: cleanup hall
   description: Script to automate cleanup of the hall
@@ -20,17 +9,6 @@ cleanup_hall:
         zone:
           - [26000, 24400, 27800, 25200]
           - [26400, 22600, 28100, 24400]
-
-cleanup_living_room:
-  alias: cleanup living room
-  description: Script to automate cleanup of the living room
-  sequence:
-    - service: xiaomi_miio.vacuum_clean_zone
-      data:
-        entity_id: vacuum.xiaomi_vacuum_cleaner
-        repeats: 1
-        zone:
-          - [20500, 20800, 26400, 24200]
 
 goto_target:
   alias: goto target

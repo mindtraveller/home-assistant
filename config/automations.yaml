@@ -20,8 +20,6 @@
 - !include automations/vacuum/telegram/callback_vaccum_back.yaml
 - !include automations/vacuum/telegram/callback_vacuum_cancel_cleanup.yaml
 - !include automations/vacuum/telegram/callback_vacuum_clean_hall.yaml
-- !include automations/vacuum/telegram/callback_vacuum_clean_kitchen.yaml
-- !include automations/vacuum/telegram/callback_vacuum_clean_living_room.yaml
 - !include automations/vacuum/telegram/callback_vacuum_dock.yaml
 - !include automations/vacuum/telegram/callback_vacuum_start.yaml
 - !include automations/vacuum/telegram/callback_vacuum_stop.yaml
