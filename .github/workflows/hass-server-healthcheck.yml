@@ -2,7 +2,7 @@ name: Hass server availability
 
 on:
   schedule:
-    - cron:  '0 */4 * * *'
+    - cron:  '0 * * * *'
 
 jobs:
   job1:
