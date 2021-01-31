@@ -13,5 +13,7 @@ action:
     data_template:
       message_id: '{{ trigger.event.data.message.message_id }}'
       chat_id: "{{ trigger.event.data.chat_id }}"
-      message: !include ../../telegram/command_list_message.yaml
-      inline_keyboard: !include ../../telegram/command_list_keyboard.yaml
+      message: 'Here are all available commands:'
+      inline_keyboard:
+        - 'vacuum:/vacuum'
+        - 'hass:/hass'
