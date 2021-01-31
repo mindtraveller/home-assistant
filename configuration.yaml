@@ -1,8 +1,10 @@
 homeassistant:
   name: Home
   unit_system: metric
-  elevation: 30
   time_zone: Europe/Minsk
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 30
   external_url: !secret base_url
 
 default_config:
