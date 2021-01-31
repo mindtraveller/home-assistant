@@ -15,7 +15,7 @@ action:
       chat_id: '{{ trigger.event.data.chat_id }}'
       message: 'Here are Vacuum commands:'
       inline_keyboard:
-        - 'Start:/vacuum_start'
-        - 'Clean hall:/vacuum_clean_hall'
-        - 'Cancel cleanup:/vacuum_cancel_cleanup, Stop:/vacuum_stop, Dock:/vacuum_dock'
-        - 'Back:/vacuum_back'
+        - 'start:/vacuum_start'
+        - 'hall:/vacuum_clean_hall, area1:/vacuum_clean_area1'
+        - 'cancel:/vacuum_cancel_cleanup, stop:/vacuum_stop, dock:/vacuum_dock'
+        - 'back:/vacuum_back'
