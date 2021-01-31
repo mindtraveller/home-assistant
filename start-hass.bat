@@ -1,1 +1,1 @@
-hass --daemon --config=./config
+hass --daemon --config=./

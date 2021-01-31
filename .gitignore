@@ -1,7 +1,7 @@
 .idea
-config/*
-!config/automations
-!config/**/*.yaml
-!config/**/*.yml
-config/**/secrets.yaml
+.storage
+.HA_VERSION
+home-assistant.log
+home-assistant_v2.db
+**/secrets.yaml
 deploy-secrets.sh

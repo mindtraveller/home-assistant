@@ -10,9 +10,9 @@ homeassistant:
 default_config:
 
 cloud: false
-script: !include scripts.yaml
-automation: !include_dir_list automations
-google_assistant: !include google-assistant.yaml
+script: !include config/scripts.yaml
+automation: !include_dir_list config/automations
+google_assistant: !include config/google-assistant.yaml
 logger:
   default: info
 

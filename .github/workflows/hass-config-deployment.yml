@@ -22,6 +22,7 @@ jobs:
           privateKey: ${{ secrets.HASS_SERVER_KEY }}
           local: config
           remote: hass/config
+          rmRemote: true
 
       - name: Deploy helper scripts to server
         uses: garygrossgarten/github-action-scp@release
