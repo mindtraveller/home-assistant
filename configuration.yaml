@@ -1,10 +1,8 @@
 homeassistant:
   name: Home
   unit_system: metric
-  time_zone: Europe/Minsk
-  latitude: !secret latitude
-  longitude: !secret longitude
   elevation: 30
+  time_zone: Europe/Minsk
   external_url: !secret base_url
 
 default_config:
@@ -14,6 +12,12 @@ script: !include config/scripts.yaml
 automation: !include_dir_list config/automations
 logger:
   default: info
+
+zone:
+  - name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude
+    radius: 50
 
 vacuum:
   - platform: xiaomi_miio
