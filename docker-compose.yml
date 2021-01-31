@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   home-assistant:
-    image: homeassistant/home-assistant:0.112.4
+    image: homeassistant/home-assistant:2021.1.5
     container_name: home-assistant
     ports:
       - 8123:8123
