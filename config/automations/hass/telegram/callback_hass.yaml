@@ -15,5 +15,5 @@ action:
       chat_id: '{{ trigger.event.data.chat_id }}'
       message: 'Here are Home Assistant commands:'
       inline_keyboard:
-        - 'Restart:/hass_restart'
-        - 'Back:/hass_back'
+        - 'restart:/hass_restart'
+        - 'back:/hass_back'
