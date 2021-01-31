@@ -17,7 +17,7 @@ jobs:
                         -H "Authorization: Bearer ${{secrets.HASS_TOKEN}}" \
                         ${{secrets.HASS_ADDRESS}}/api/config`
 
-          if [[ $status != 200 ]]; then
+          if [[ $status != 401 ]]; then
             exit 1
           fi
 
