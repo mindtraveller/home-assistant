@@ -1,0 +1,11 @@
+alias: send weather forecast
+trigger:
+  platform: time
+  at: '09:00:00'
+action:
+  - service: telegram_bot.send_message
+    data:
+      title: '<b>Weather forecast</b>'
+      message: |
+        It's {{ state_attr('weather.home', 'temperature') }}&#8451;, {{ states("weather.home") }} now.
+        Tommorow expect {{ state_attr('weather.home', 'forecast')[0].temperature }}&#8451;, {{ state_attr('weather.home', 'forecast')[0].condition }}.
