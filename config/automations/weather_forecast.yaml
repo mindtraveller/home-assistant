@@ -7,5 +7,5 @@ action:
     data:
       title: '<b>Weather forecast</b>'
       message: |
-        It's {{ state_attr('weather.home', 'temperature') }}&#8451;, {{ states("weather.home") }} now.
-        Tommorow expect {{ state_attr('weather.home', 'forecast')[0].temperature }}&#8451;, {{ state_attr('weather.home', 'forecast')[0].condition }}.
+        It's {{ state_attr('weather.home', 'temperature') }} &#8451;, {{ states("weather.home") }} now.
+        Tommorow expect {{ state_attr('weather.home', 'forecast')[0].temperature }} &#8451;, {{ state_attr('weather.home', 'forecast')[0].condition }}.
