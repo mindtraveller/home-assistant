@@ -21,8 +21,8 @@ cleanup_area1:
           - [23000, 20900, 26100, 23200]
 
 cleanup_dressing:
-  alias: cleanup area1
-  description: Script to automate cleanup of the area1
+  alias: cleanup dressing
+  description: Script to automate cleanup of the dressing room
   sequence:
     - service: xiaomi_miio.vacuum_clean_zone
       data:
