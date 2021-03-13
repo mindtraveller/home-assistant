@@ -24,17 +24,10 @@ jobs:
           remote: hass/config
           rmRemote: true
 
-      - name: Deploy root config to server
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          host: ${{ secrets.HASS_SERVER_SSH_HOST }}
-          port: ${{ secrets.HASS_SERVER_SSH_PORT }}
-          username: ${{ secrets.HASS_SERVER_USER }}
-          privateKey: ${{ secrets.HASS_SERVER_KEY }}
-          local: ./configuration.yaml
-          remote: hass
+      - name: move root config file to scripts to deploy it to root folder
+        run: mv configuration.yaml scripts
 
-      - name: Deploy helper scripts to server
+      - name: Deploy scripts to server
         uses: garygrossgarten/github-action-scp@release
         with:
           host: ${{ secrets.HASS_SERVER_SSH_HOST }}
