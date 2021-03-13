@@ -20,6 +20,17 @@ cleanup_area1:
         zone:
           - [23000, 20900, 26100, 23200]
 
+cleanup_dressing:
+  alias: cleanup area1
+  description: Script to automate cleanup of the area1
+  sequence:
+    - service: xiaomi_miio.vacuum_clean_zone
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        repeats: 1
+        zone:
+          - [26700, 20900, 28100, 22600]
+
 goto_target:
   alias: goto target
   description: Example of goto target command for vacuum
