@@ -5,6 +5,9 @@ trigger:
 action:
   - service: telegram_bot.send_message
     data:
+      target:
+        - !secret telegram_chat_id_admin
+        - !secret telegram_chat_id_ksenia
       title: '✅ <b>Server started!</b>'
       message: |
         Home Assistant server has started successfully.

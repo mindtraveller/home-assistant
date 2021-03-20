@@ -5,5 +5,8 @@ trigger:
 action:
   - service: telegram_bot.send_message
     data:
+      target:
+        - !secret telegram_chat_id_admin
+        - !secret telegram_chat_id_ksenia
       title: '❗ <b>Stopping server!</b>'
       message: Home Assistant server is being shutdown
