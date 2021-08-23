@@ -9,4 +9,4 @@ action:
       target:
         - !secret telegram_chat_id_admin
         - !secret telegram_chat_id_ksenia
-      message: 🤖 Error! {{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'error') }}
+      message: 🤖 Палундра! {{ state_attr('vacuum.xiaomi_vacuum_cleaner', 'error') }}
